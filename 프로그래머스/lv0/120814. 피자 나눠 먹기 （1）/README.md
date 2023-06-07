@@ -1,6 +1,8 @@
-# [level 0] 피자 나눠 먹기 (1) - 120814 
+# [level 0] 피자 나눠 먹기 (1) - 120814
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120814) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120814)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%ED%94%BC%EC%9E%90-%EB%82%98%EB%88%A0-%EB%A8%B9%EA%B8%B0-1)
 
 ### 성능 요약
 
@@ -70,6 +72,5 @@ Empty
 <ul>
 <li>15명이 최소 한 조각씩 먹기 위해서 최소 3판이 필요합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
