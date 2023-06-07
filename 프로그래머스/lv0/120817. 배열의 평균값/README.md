@@ -1,6 +1,7 @@
 # [level 0] 배열의 평균값 - 120817
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120817?language=python3)
+
 ✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%8F%89%EA%B7%A0%EA%B0%92-list-%EC%9A%94%EC%86%8C%EC%9D%98-%ED%95%A9%EC%9D%84-%EA%B5%AC%ED%95%B4%EC%A3%BC%EB%8A%94-sum-%ED%95%A8%EC%88%98)
 
 ### 성능 요약
