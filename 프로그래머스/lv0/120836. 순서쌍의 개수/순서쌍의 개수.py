@@ -1,12 +1,20 @@
+# 반복 최소화
 def solution(n):
     answer = 0
     flag = False
-    for i in range(0, n):
-        if n == 1:
-            answer = 1
+    for i in range(1, int(n ** (1 / 2)) + 1):
+        if n % i == 0:
+            answer += 1
+        if i ** 2 == n:
             flag = True
-            break
-        if n % (i + 1) == 0: answer += 1
-        if (i + 1) * (i + 1) == n: flag = True
-        if (i + 1) * (i + 1) <= n < (i + 2) * (i + 2): break
     return answer * 2 - 1 if flag else answer * 2
+
+
+"""
+# 코드 단순화
+def solution1(n):
+    answer = 0
+    for i in range(1, n + 1):
+        if n % i == 0: answer += 1
+    return answer
+"""
