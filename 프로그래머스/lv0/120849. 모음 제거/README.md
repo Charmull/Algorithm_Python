@@ -1,6 +1,8 @@
-# [level 0] 모음 제거 - 120849 
+# [level 0] 모음 제거 - 120849
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120849) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120849)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -61,6 +63,5 @@ Empty
 <ul>
 <li>"nice to meet you"에서 모음 i, o, e, u를 모두 제거한 "nc t mt y"를 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
