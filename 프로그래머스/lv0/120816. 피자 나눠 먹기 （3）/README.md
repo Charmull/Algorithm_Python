@@ -1,6 +1,8 @@
-# [level 0] 피자 나눠 먹기 (3) - 120816 
+# [level 0] 피자 나눠 먹기 (3) - 120816
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120816) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120816)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -64,6 +66,5 @@ Empty
 <ul>
 <li>12명이 4조각으로 자른 피자를 한 조각 이상씩 먹으려면 최소 3판을 시켜야 합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges

@@ -5,3 +5,15 @@ def solution(slice, n):
     else:
         answer = n // slice + 1
     return answer
+
+
+"""
+def solution(numbers):
+    return ((n - 1) // slice) + 1
+"""
+
+"""
+def solution(numbers):
+	d, m = divmod(n, slice)
+    return d + int(m != 0)
+"""
