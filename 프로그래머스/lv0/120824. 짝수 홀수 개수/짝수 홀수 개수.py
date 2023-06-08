@@ -6,3 +6,12 @@ def solution(num_list):
         else:
             answer[1] += 1
     return answer
+
+
+"""
+def solution(numbers):
+    answer = [0, 0]
+    for n in num_list:
+        answer[n % 2] += 1
+    return answer
+"""

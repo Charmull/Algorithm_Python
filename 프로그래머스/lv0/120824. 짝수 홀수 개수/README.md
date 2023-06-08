@@ -1,6 +1,8 @@
-# [level 0] 짝수 홀수 개수 - 120824 
+# [level 0] 짝수 홀수 개수 - 120824
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120824) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120824)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -61,6 +63,5 @@ Empty
 <ul>
 <li>[1, 3, 5, 7]에는 짝수가 없고 홀수가 네 개 있습니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
