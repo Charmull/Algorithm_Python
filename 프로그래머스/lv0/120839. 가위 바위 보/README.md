@@ -1,6 +1,8 @@
-# [level 0] 가위 바위 보 - 120839 
+# [level 0] 가위 바위 보 - 120839
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -62,6 +64,5 @@ Empty
 <ul>
 <li>"205"는 순서대로 가위, 바위, 보이고 이를 모두 이기려면 바위, 보, 가위를 순서대로 내야하므로 “052”를 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
