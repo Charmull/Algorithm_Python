@@ -1,6 +1,8 @@
-# [level 0] 세균 증식 - 120910 
+# [level 0] 세균 증식 - 120910
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120910) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120910)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -64,6 +66,5 @@ Empty
 <ul>
 <li>처음엔 7마리, 1시간 후엔 14마리, 2시간 후엔 28마리, ..., 15시간 후엔 229376마리가 됩니다. 따라서 229,376을 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
