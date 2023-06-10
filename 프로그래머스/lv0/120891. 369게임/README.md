@@ -1,6 +1,8 @@
-# [level 0] 369게임 - 120891 
+# [level 0] 369게임 - 120891
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120891) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120891)
+
+✅ [블로그 포스팅 (Charmull)]()
 
 ### 성능 요약
 
@@ -64,6 +66,5 @@ Empty
 <hr>
 
 <p>※ 공지 - 2023년 03월 24일 테스트 케이스가 추가되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges

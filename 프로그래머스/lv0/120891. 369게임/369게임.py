@@ -4,3 +4,18 @@ def solution(order):
         if val in '369':
             answer += 1
     return answer
+
+
+"""
+# count() 메소드 활용
+def solution(order):
+    answer = 0
+    order = str(order)
+    return order.count('3') + order.count('6') + order.count('9')
+"""
+
+"""
+# map() 메소드 활용
+def solution(order):
+	return sum(map(lambda x: str(order).count(str(x)), [3, 6, 9]))
+"""
