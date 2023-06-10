@@ -1,14 +1,8 @@
 def solution(n):
     answer = 0
-    if n < 4:
-        return 0
     for i in range(4, n + 1):
-        temp = 0
-        for j in range(1, int(i ** (1/2)) + 1):
+        for j in range(2, int(i ** (0.5) + 1)):
             if i % j == 0:
-                temp += 1
-                if temp >= 2: break
-        if temp >= 2:
-            answer += 1
-            continue
+                answer += 1
+                break
     return answer
