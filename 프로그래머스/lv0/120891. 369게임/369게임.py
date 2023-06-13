@@ -19,3 +19,9 @@ def solution(order):
 def solution(order):
 	return sum(map(lambda x: str(order).count(str(x)), [3, 6, 9]))
 """
+
+"""
+# sum() 함수 활용
+def solution(order):
+	return sum(n in '369' for n in str(order))
+"""

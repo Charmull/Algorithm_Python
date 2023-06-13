@@ -2,7 +2,7 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120891)
 
-✅ [블로그 포스팅 (Charmull)]()
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-369%EA%B2%8C%EC%9E%84-%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC-%ED%95%84%EC%9A%94)
 
 ### 성능 요약
 
