@@ -1,6 +1,8 @@
-# [level 0] A로 B 만들기 - 120886 
+# [level 0] A로 B 만들기 - 120886
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120886) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120886)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-A%EB%A1%9C-B-%EB%A7%8C%EB%93%A4%EA%B8%B0)
 
 ### 성능 요약
 
@@ -64,6 +66,5 @@ Empty
 <ul>
 <li>"allpe"의 순서를 바꿔도 "apple"을 만들 수 없습니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
