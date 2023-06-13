@@ -1,6 +1,8 @@
-# [level 0] 합성수 찾기 - 120846 
+# [level 0] 합성수 찾기 - 120846
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120846) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120846)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%ED%95%A9%EC%84%B1%EC%88%98-%EC%B0%BE%EA%B8%B0)
 
 ### 성능 요약
 
@@ -60,6 +62,5 @@ Empty
 <ul>
 <li>15 이하 합성수는 4, 6, 8, 9, 10, 12, 14, 15 로 8개입니다. 따라서 8을 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
