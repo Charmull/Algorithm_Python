@@ -1,6 +1,8 @@
-# [level 0] 가까운 수 - 120890 
+# [level 0] 가까운 수 - 120890
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120890) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120890)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%88%98-%EC%B6%94%ED%9B%84-%EC%A0%95%EB%A6%AC)
 
 ### 성능 요약
 
@@ -68,6 +70,5 @@ Empty
 </ul>
 
 <p>※ 공지 - 2023년 3월 29일 테스트 케이스가 추가되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
