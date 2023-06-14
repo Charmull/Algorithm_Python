@@ -1,6 +1,8 @@
-# [level 0] 숨어있는 숫자의 덧셈 (2) - 120864 
+# [level 0] 숨어있는 숫자의 덧셈 (2) - 120864
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120864) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120864)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EC%88%A8%EC%96%B4%EC%9E%88%EB%8A%94-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%8D%A7%EC%85%88-2-%EC%B6%94%ED%9B%84-%EC%A0%95%EB%A6%AC)
 
 ### 성능 요약
 
@@ -64,6 +66,5 @@ Empty
 <ul>
 <li>"1a2b3c4d123Z"안의 자연수는 1, 2, 3, 4, 123 입니다. 따라서 1 + 2 + 3 + 4 + 123 = 133 을 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
