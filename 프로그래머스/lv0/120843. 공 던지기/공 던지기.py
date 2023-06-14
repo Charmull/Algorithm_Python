@@ -1,4 +1,9 @@
 def solution(numbers, k):
+    return 2 * (k - 1) % len(numbers) + 1
+
+
+"""
+def solution(numbers, k):
     answer = 0
     oddList = numbers[::2]
     evenList = numbers[1::2]
@@ -10,3 +15,4 @@ def solution(numbers, k):
         else:
             answer = evenList[(k - 1) % len(numbers) - len(oddList)]
     return answer
+"""
