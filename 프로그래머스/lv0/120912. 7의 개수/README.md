@@ -1,6 +1,8 @@
-# [level 0] 7의 개수 - 120912 
+# [level 0] 7의 개수 - 120912
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120912) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120912)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-7%EC%9D%98-%EA%B0%9C%EC%88%98)
 
 ### 성능 요약
 
@@ -61,6 +63,5 @@ Empty
 <ul>
 <li>[10, 29]에는 7이 없으므로 0을 return 합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
