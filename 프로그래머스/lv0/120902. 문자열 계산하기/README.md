@@ -1,6 +1,8 @@
-# [level 0] 문자열 계산하기 - 120902 
+# [level 0] 문자열 계산하기 - 120902
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120902) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120902)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
 
 ### 성능 요약
 
@@ -63,6 +65,5 @@ Empty
 <ul>
 <li>3 + 4 = 7을 return 합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
