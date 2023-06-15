@@ -8,3 +8,11 @@ def solution(dots):
         elif dot[1] != y1:
             y2 = dot[1]
     return abs((x1 - x2) * (y1 - y2))
+
+
+"""
+def solution(dots):
+    A = max(dots)
+    B = min(dots)
+    return (A[0] - B[0]) * (A[1] - B[1])
+"""

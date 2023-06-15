@@ -1,6 +1,8 @@
-# [level 0] 직사각형 넓이 구하기 - 120860 
+# [level 0] 직사각형 넓이 구하기 - 120860
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120860) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120860)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95-%EB%84%93%EC%9D%B4-%EA%B5%AC%ED%95%98%EA%B8%B0)
 
 ### 성능 요약
 
@@ -63,6 +65,5 @@ Empty
 <ul>
 <li>좌표 [[-1, -1], [1, 1], [1, -1], [-1, 1]]를 꼭짓점으로 갖는 직사각형의 가로, 세로 길이는 각각 2, 2이므로 직사각형의 넓이는 2 x 2 = 4입니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
