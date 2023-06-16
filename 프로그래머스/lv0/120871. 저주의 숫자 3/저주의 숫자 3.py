@@ -1,12 +1,9 @@
 def solution(n):
     answer = 0
-    for i in range(1, n + 1):
-        answer += 1
+    for i in range(n):
         while(True):
-            if answer % 3 == 0:
-                answer += 1
-            elif str(answer).find('3') != -1:
-                answer += 1
-            else:
-                break
+            answer += 1
+            if answer % 3 == 0 or '3' in str(answer):
+                continue
+            break
     return answer
