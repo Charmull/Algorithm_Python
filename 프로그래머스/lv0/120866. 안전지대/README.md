@@ -1,6 +1,8 @@
-# [level 0] 안전지대 - 120866 
+# [level 0] 안전지대 - 120866
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120866) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120866)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80)
 
 ### 성능 요약
 
@@ -76,6 +78,5 @@ Empty
 <ul>
 <li>모든 지역에 지뢰가 있으므로 안전지역은 없습니다. 따라서 0을 return합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
