@@ -6,4 +6,12 @@ def solution(num, total):
     else:
         for i in range((total // num) - (num // 2 - 1), (total // num) + (num // 2) + 1):
             answer.append(i)
-    return answer      
+    return answer
+
+
+"""
+def solution(num, total):
+    q, r = divmod(num, 2)
+    m = total // num + int(r == 0)
+    return list(range(m - q, m + q + int(r != 0)))
+"""
