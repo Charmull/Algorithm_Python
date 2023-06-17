@@ -1,6 +1,8 @@
-# [level 0] 분수의 덧셈 - 120808 
+# [level 0] 분수의 덧셈 - 120808
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120808) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120808)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EB%B6%84%EC%88%98%EC%9D%98-%EB%8D%A7%EC%85%88)
 
 ### 성능 요약
 
@@ -69,6 +71,5 @@ Empty
 <ul>
 <li>9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
