@@ -1,4 +1,10 @@
 def solution(lines):
+    sets = [set(range(l[0], l[1])) for l in lines]
+    return len(sets[0] & sets[1] | sets[0] & sets[2] | sets[1] & sets[2])
+
+
+"""
+def solution(lines):
     answer = 0
     sorted_lines = sorted(lines, key=lambda x: (x[0], x[1]))
     # 겹치는 위치
@@ -26,3 +32,27 @@ def solution(lines):
                 i += 1
         answer = sum(val[1] - val[0] for val in match_pos)
     return answer
+"""
+
+"""
+def solution(lines):
+    s1 = set(i for i in range(lines[0][0], lines[0][1]))
+    s2 = set(i for i in range(lines[1][0], lines[1][1]))
+    s3 = set(i for i in range(lines[2][0], lines[2][1]))
+    return len((s1 & s2) | (s2 & s3) | (s1 & s3))
+"""
+
+"""
+import collections
+
+def solution(lines):
+    counts = collections.defaultdict(int)
+    
+    for a, b in lines:
+        for i in range(a, b):
+            counts[i] += 1
+    
+    result = list(counts.values())
+    
+    return len(result) - result.count(1)
+"""

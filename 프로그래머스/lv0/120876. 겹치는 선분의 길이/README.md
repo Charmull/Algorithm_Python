@@ -1,6 +1,8 @@
-# [level 0] 겹치는 선분의 길이 - 120876 
+# [level 0] 겹치는 선분의 길이 - 120876
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120876) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120876)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EA%B2%B9%EC%B9%98%EB%8A%94-%EC%84%A0%EB%B6%84%EC%9D%98-%EA%B8%B8%EC%9D%B4)
 
 ### 성능 요약
 
@@ -86,6 +88,5 @@ Empty
 <li>두 번째와 세 번째 선분 [3, 9] 구간에서&nbsp;겹칩니다.</li>
 <li>따라서 [1, 9] 구간에 두 개 이상의 선분이 겹쳐있으므로, 8을 return 합니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
