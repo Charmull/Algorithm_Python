@@ -1,6 +1,8 @@
-# [level 0] 평행 - 120875 
+# [level 0] 평행 - 120875
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%ED%8F%89%ED%96%89)
 
 ### 성능 요약
 
@@ -80,6 +82,5 @@ Empty
 <p>※ 공지 - 2022년 9월 30일 제한 사항 및 테스트 케이스가 수정되었습니다.<br>
 ※ 공지 - 2022년 10월 27일 제한 사항 및 테스트 케이스가 수정되었습니다.<br>
 ※ 공지 - 2023년 2월 14일 테스트 케이스가 수정되었습니다.</p>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
