@@ -1,6 +1,8 @@
-# [level 0] 옹알이 (1) - 120956 
+# [level 0] 옹알이 (1) - 120956
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120956) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120956)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4Python-%EC%98%B9%EC%95%8C%EC%9D%B4-1)
 
 ### 성능 요약
 
@@ -79,6 +81,5 @@ Empty
 <hr>
 
 <p>※ 공지 - 2022년 10월 27일 문제 지문이 리뉴얼되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges

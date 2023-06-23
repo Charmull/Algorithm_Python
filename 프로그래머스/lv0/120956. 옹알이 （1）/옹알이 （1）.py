@@ -9,3 +9,20 @@ def solution(babbling):
         if v.replace(' ', '') == '':
             answer += 1
     return answer
+
+
+"""
+def solution(babbling):
+    
+    result = 0
+    
+    for b in babbling:
+    
+        for word in {'aya', 'ye', 'woo', 'ma'}:
+            b = b.replace(word, ' ', 1)
+        
+        if b.strip() == '':
+            result += 1
+    
+    return result
+"""
