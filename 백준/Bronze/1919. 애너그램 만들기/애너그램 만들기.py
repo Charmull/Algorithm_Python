@@ -1,3 +1,4 @@
+# 풀이 1
 a, b = input(), input()
 a = sorted(a)
 b = sorted(b)
@@ -24,3 +25,15 @@ if a or b:
     count += len(a) + len(b)
 
 print(count)
+
+
+# # 풀이 2
+# a = input()
+# b = input()
+
+# for i in a:
+#   if i in b:
+#     a = a.replace(i,'',1)
+#     b = b.replace(i,'',1)
+
+# print(len(a) + len(b))
