@@ -1,6 +1,8 @@
-# [Gold IV] 오큰수 - 17298 
+# [Gold IV] 오큰수 - 17298
 
-[문제 링크](https://www.acmicpc.net/problem/17298) 
+[문제 링크](https://www.acmicpc.net/problem/17298)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%EB%B0%B1%EC%A4%80Python-%EC%98%A4%ED%81%B0%EC%88%98)
 
 ### 성능 요약
 
@@ -16,11 +18,10 @@
 
 <p>예를 들어, A = [3, 5, 2, 7]인 경우 NGE(1) = 5, NGE(2) = 7, NGE(3) = 7, NGE(4) = -1이다. A = [9, 5, 4, 8]인 경우에는 NGE(1) = -1, NGE(2) = 8, NGE(3) = 8, NGE(4) = -1이다.</p>
 
-### 입력 
+### 입력
 
  <p>첫째 줄에 수열 A의 크기 N (1 ≤ N ≤ 1,000,000)이 주어진다. 둘째 줄에 수열 A의 원소 A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (1 ≤ A<sub>i</sub> ≤ 1,000,000)이 주어진다.</p>
 
-### 출력 
+### 출력
 
  <p>총 N개의 수 NGE(1), NGE(2), ..., NGE(N)을 공백으로 구분해 출력한다.</p>
-
