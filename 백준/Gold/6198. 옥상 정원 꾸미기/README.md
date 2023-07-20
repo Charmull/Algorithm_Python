@@ -1,6 +1,8 @@
-# [Gold V] 옥상 정원 꾸미기 - 6198 
+# [Gold V] 옥상 정원 꾸미기 - 6198
 
-[문제 링크](https://www.acmicpc.net/problem/6198) 
+[문제 링크](https://www.acmicpc.net/problem/6198)
+
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%EB%B0%B1%EC%A4%80Python-%EC%98%A5%EC%83%81-%EC%A0%95%EC%9B%90-%EA%BE%B8%EB%AF%B8%EA%B8%B0)
 
 ### 성능 요약
 
@@ -46,16 +48,15 @@
 
 <p>따라서, 관리인들이 옥상정원을 확인할 수 있는 총 수는 3 + 0 + 1 + 0 + 1 + 0 = 5이다.</p>
 
-### 입력 
+### 입력
 
  <ul>
 	<li>첫 번째 줄에 빌딩의 개수 N이 입력된다.(1 ≤ N ≤ 80,000)</li>
 	<li>두 번째 줄 부터 N+1번째 줄까지 각 빌딩의 높이가 h<sub>i</sub> 입력된다. (1 ≤ h<sub>i</sub> ≤ 1,000,000,000)</li>
 </ul>
 
-### 출력 
+### 출력
 
  <ul>
 	<li>각 관리인들이 벤치마킹이 가능한 빌딩의 수의 합을 출력한다.</li>
 </ul>
-
