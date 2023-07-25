@@ -1,3 +1,4 @@
+# 풀이 1
 import sys
 from collections import deque
 
@@ -35,3 +36,40 @@ for _ in range(t):
         else:
             deq.reverse()
             print('[' + ','.join(deq) + ']')
+
+
+# # 풀이 2
+# import sys
+# input = sys.stdin.readline
+
+# t = int(input())
+# for _ in range(t):
+#     p = list(map(len, input().rstrip().replace('RR', '').split('R')))
+#     n = int(input())
+#     if n == 0:
+#         input()
+#         arr = []
+#     else:
+#         arr = input().strip('[]\n').split(',')
+
+#     # 앞에서부터 제거할 요소들의 개수를 담은 리스트(p[0::2])의 요소들을 합산
+#     # 즉, front는 앞에서부터 제거할 요소의 개수
+#     front = sum(p[0::2])
+#     try:
+#         # 뒤에서부터 제거할 요소들의 개수를 담은 리스트(p[1::2])의 요소들을 합산
+#         # 즉, back은 뒤에서부터 제거할 요소의 개수
+#         back = sum(p[1::2])
+#     except:
+#         back = 0
+
+#     # 제거할 요소의 수가 n을 넘어서면
+#     if front + back > n:
+#         print('error')
+#         continue
+#     else:
+#         # 요소를 제거
+#         arr = arr[front:(n - back)]
+    
+#     if (len(p) + 1) % 2 == 1:
+#         arr.reverse()
+#     print('[' + ','.join(arr) + ']')
