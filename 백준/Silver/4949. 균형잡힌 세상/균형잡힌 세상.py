@@ -1,3 +1,4 @@
+# 풀이 1
 import sys
 
 while True:
@@ -10,17 +11,11 @@ while True:
         if v == '(' or v == '[':
             stack.append(v)
         elif v == ')':
-            if not stack:
-                flag = False
-                break
-            elif stack.pop() != '(':
+            if not stack or stack.pop() != '(':
                 flag = False
                 break
         elif v == ']':
-            if not stack:
-                flag = False
-                break
-            elif stack.pop() != '[':
+            if not stack or stack.pop() != '[':
                 flag = False
                 break
         elif v == '.':
