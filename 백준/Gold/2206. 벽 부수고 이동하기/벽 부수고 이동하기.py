@@ -22,22 +22,17 @@ def bfs():
             nx = x + dx[i]
             if ny < 0 or nx < 0 or ny >= n or nx >= m:
                 continue
-            
+
+            if visited[ny][nx] == 1 or (visited[ny][nx] == 2 and not can_break):
+                continue
+            if matrix[ny][nx] == 0:
+                deq.append([ny, nx, can_break, current_dist + 1])
+                visited[ny][nx] = 1 if can_break else 2
+                continue
             if not can_break:
-                if visited[ny][nx]:
                     continue
-                if matrix[ny][nx]:
-                    continue
-                deq.append([ny, nx, False, current_dist + 1])
-                visited[ny][nx] = 2
-            else:
-                flag = True
-                if visited[ny][nx] == 1:
-                    continue
-                if matrix[ny][nx]:
-                    flag = False
-                deq.append([ny, nx, flag, current_dist + 1])
-                visited[ny][nx] = 1 if flag else 2
+            deq.append([ny, nx, False, current_dist + 1])
+            visited[ny][nx] = 2
             
 bfs()
 print(-1)
