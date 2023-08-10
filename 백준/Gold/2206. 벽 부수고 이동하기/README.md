@@ -2,7 +2,7 @@
 
 [문제 링크](https://www.acmicpc.net/problem/2206)
 
-✅ [블로그 포스팅 (Charmull)]()
+✅ [블로그 포스팅 (Charmull)](https://velog.io/@charmull/%EB%B0%B1%EC%A4%80Python-2206.-%EB%B2%BD-%EB%B6%80%EC%88%98%EA%B3%A0-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0)
 
 ### 성능 요약
 
