@@ -1,16 +1,14 @@
-n = int(input())
-nums = list(map(int, input().split()))
-x = int(input())
-nums.sort()
-left, right = 0, n - 1
+import sys
 
-result = 0
-while left < right:
-    temp = nums[left] + nums[right]
-    if temp == x:
-        result += 1
-    if temp < x:
-        left += 1
-        continue
-    right -= 1
-print(result)
+input = sys.stdin.readline
+n = int(input())
+l = list(map(int, input().split()))
+x = int(input())
+visited = [0] * (x + 1)
+
+count = 0
+for num in l:
+    if x - num <= 0: continue
+    if visited[x - num]: count += 1
+    visited[num] = 1
+print(count)
