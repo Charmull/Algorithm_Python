@@ -1,11 +1,13 @@
-import math
+import sys
 
+input = sys.stdin.readline
 n, k = map(int, input().split())
-students = [[0, 0] for _ in range(6)]
-for _ in range(n):
+l = [[0, 0] for _ in range(6)]
+for i in range(n):
     s, y = map(int, input().split())
-    students[y - 1][0 if s == 0 else 1] += 1
-total = 0
-for grade in students:
-    total += math.ceil(grade[0] / k) + math.ceil(grade[1] / k)
-print(total)
+    l[y - 1][s] += 1
+room = 0
+for n1, n2 in l:
+    room += n1 // 2 + 1 if n1 % 2 else n1 //2
+    room += n2 // 2 + 1 if n2 % 2 else n2 //2
+print(room)
