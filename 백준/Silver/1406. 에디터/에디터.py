@@ -1,38 +1,21 @@
-# 풀이 2
 import sys
 
-st1 = list(sys.stdin.readline().rstrip())
-st2 = []
+input = sys.stdin.readline
+string = input().strip()
+n = int(input())
+left = list(string)
+right = []
 
-for _ in range(int(sys.stdin.readline())):
-	command = list(sys.stdin.readline().split())
-	if command[0] == 'L':
-		if st1: st2.append(st1.pop())
-	elif command[0] == 'D':
-		if st2: st1.append(st2.pop())
-	elif command[0] == 'B':
-		if st1: st1.pop()
-	else:
-		st1.append(command[1])
+for _ in range(n):
+    commands = input().split()
+    if commands[0] == 'L' and left:
+        right.append(left.pop())
+    elif commands[0] == 'D' and right:
+        left.append(right.pop())
+    elif commands[0] == 'B' and left:
+        left.pop()
+    elif commands[0] == 'P':
+        left.append(commands[1])
 
-st1.extend(reversed(st2))
-print(''.join(st1))
-
-
-# # 풀이 1
-# text = input()
-# cursor = len(text)
-# for _ in range(int(input())):
-#     command = input()
-#     if command == "L":
-#         if cursor != 0: cursor -= 1
-#     elif command == "D":
-#         if cursor != len(text): cursor += 1
-#     elif command == "B":
-#         if cursor != 0:
-#             text = text[:cursor - 1] + text[cursor:]
-#             cursor -= 1
-#     else:
-#         text = text[:cursor] + command[2] + text[cursor:]
-#         if cursor != len(text): cursor += 1
-# print(text)
+right.reverse()
+print(''.join(left) + ''.join(right))
