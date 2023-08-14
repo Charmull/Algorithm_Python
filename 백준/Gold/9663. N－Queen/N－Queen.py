@@ -1,30 +1,26 @@
 import sys
+n = int(sys.stdin.readline().rstrip())
 
-input = sys.stdin.readline
-n = int(input())
+ans = 0
+row = [0] * n
 
-is_used1 = [False] * n
-is_used2 = [False] * (2 * n - 1)
-is_used3 = [False] * (2 * n - 1)
-result = 0
+def is_promising(x):
+    for i in range(x):
+        if row[x] == row[i] or abs(row[x] - row[i]) == abs(x - i):
+            return False
+    return True
 
-def n_queen(row):
-    global result
+def n_queens(x):
+    global ans
 
-    if row == n:
-        result += 1
-        return 0
-    
+    if x == n:
+        ans += 1
+        return
     for i in range(n):
-        if is_used1[i] or is_used2[i + row] or is_used3[row - i + n - 1]:
-            continue
-        is_used1[i] = True
-        is_used2[i + row] = True
-        is_used3[row - i + n - 1] = True
-        n_queen(row + 1)
-        is_used1[i] = False
-        is_used2[i + row] = False
-        is_used3[row - i + n - 1] = False
+        # [x, i]에 퀸을 놓겠다.
+        row[x] = i
+        if is_promising(x):
+            n_queens(x + 1)
 
-n_queen(0)
-print(result)
+n_queens(0)
+print(ans)
