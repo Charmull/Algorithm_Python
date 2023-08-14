@@ -1,28 +1,30 @@
+import sys
+
+input = sys.stdin.readline
 n = int(input())
 
-result = [0]
-log = []
+is_used1 = [False] * n
+is_used2 = [False] * (2 * n - 1)
+is_used3 = [False] * (2 * n - 1)
+result = 0
 
-def is_valid(nx, ny):
-    for x, y in log:
-        if x == nx or y == ny:
-            return False
-        if x - y == nx - ny:
-            return False
-        if x + y == nx + ny:
-            return False
-    return True
+def n_queen(row):
+    global result
 
-def dfs(row):
-    if len(log) == n:
-        result[0] += 1
-        return
+    if row == n:
+        result += 1
+        return 0
     
-    for col in range(n):
-        if is_valid(row, col):
-            log.append((row, col))
-            dfs(row + 1)
-            log.pop()
+    for i in range(n):
+        if is_used1[i] or is_used2[i + row] or is_used3[row - i + n - 1]:
+            continue
+        is_used1[i] = True
+        is_used2[i + row] = True
+        is_used3[row - i + n - 1] = True
+        n_queen(row + 1)
+        is_used1[i] = False
+        is_used2[i + row] = False
+        is_used3[row - i + n - 1] = False
 
-dfs(0)
-print(result[0])
+n_queen(0)
+print(result)
