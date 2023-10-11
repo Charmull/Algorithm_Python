@@ -5,7 +5,7 @@ input = sys.stdin.readline
 n, m = map(int, input().split())
 matrix_org = [list(map(int, input().split())) for _ in range(n)]
 matrix_upd = [list(row) for row in matrix_org]
-cctv_dirs = deque()   # 모든 방향 조합을 담는 큐
+cctv_dirs = []   # 모든 방향 조합을 담는 리스트
 cctv_nums = 0
 cctv_lst = []
 for i in range(n):
