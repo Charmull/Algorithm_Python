@@ -1,59 +1,80 @@
 import sys
-import copy
+from collections import deque
 
 input = sys.stdin.readline
 n, m = map(int, input().split())
-cctv = []
-graph = []
-mode = [
-    [],
-    [[0], [1], [2], [3]],
-    [[0, 2], [1, 3]],
-    [[0, 1], [1, 2], [2, 3], [0, 3]],
-    [[0, 1, 2], [0, 1, 3], [1, 2, 3], [0, 2, 3]],
-    [[0, 1, 2, 3]],
-]
-
-dx = [-1, 0, 1, 0]
-dy = [0, 1, 0, -1]
-
+matrix_org = [list(map(int, input().split())) for _ in range(n)]
+matrix_upd = [list(row) for row in matrix_org]
+cctv_dirs = deque()   # 모든 방향 조합을 담는 큐
+cctv_nums = 0
+cctv_lst = []
 for i in range(n):
-    data = list(map(int, input().split()))
-    graph.append(data)
     for j in range(m):
-        if data[j] in [1, 2, 3, 4, 5]:
-            cctv.append([data[j], i, j])
+        if matrix_org[i][j] != 0 and matrix_org[i][j] != 6:
+            cctv_nums += 1
+            cctv_lst.append([i, j])
 
-def fill(board, mm, x, y):
-    for i in mm:
-        nx = x
-        ny = y
-        while True:
-            nx += dx[i]
-            ny += dy[i]
-            if nx < 0 or ny < 0 or nx >= n or ny >= m:
-                break
-            if board[nx][ny] == 6:
-                break
-            elif board[nx][ny] == 0:
-                board[nx][ny] = 7
+def get_dirs():
+    # cctv는 4방향을 볼 수 있으니 나올 수 있는 cctv 방향 조합 수는 (4 ** k - 1)개
+    for i in range(4 ** cctv_nums):
+        # cctv 개수만큼의 자릿수가 나와야 함
+        tmp = deque()
+        for _ in range(cctv_nums):
+            tmp.appendleft(i % 4)
+            i //= 4
+        cctv_dirs.append(tmp)
 
-def dfs(depth, arr):
-    global min_value
+# cctv가 볼 수 있는 칸은 7로 마킹
+dy = (-1, 0, 1, 0)
+dx = (0, 1, 0, -1)
+def upd(y, x, dir):
+    while True:
+        y += dy[dir]
+        x += dx[dir]
+        if y < 0 or x < 0 or y >= n or x >= m:
+            return
+        if matrix_upd[y][x] == 6:
+            return
+        if matrix_upd[y][x] != 0:
+            continue
+        matrix_upd[y][x] = 7
 
-    if depth == len(cctv):
-        count = 0
-        for i in range(n):
-            count += arr[i].count(0)
-        min_value = min(min_value, count)
-        return
-    temp = copy.deepcopy(arr)
-    cctv_num, x, y = cctv[depth]
-    for i in mode[cctv_num]:
-        fill(temp, i, x, y)
-        dfs(depth+1, temp)
-        temp = copy.deepcopy(arr)
 
-min_value = int(1e9)
-dfs(0, graph)
-print(min_value)
+get_dirs()
+result = n * m
+for d in cctv_dirs:
+    for i in range(cctv_nums):
+        current_row = cctv_lst[i][0]
+        current_col = cctv_lst[i][1]
+        if matrix_upd[current_row][current_col] == 1:
+            upd(cctv_lst[i][0], cctv_lst[i][1], d[i])
+        if matrix_upd[current_row][current_col] == 2:
+            upd(cctv_lst[i][0], cctv_lst[i][1], d[i] % 2)
+            upd(cctv_lst[i][0], cctv_lst[i][1], d[i] % 2 + 2)
+        if matrix_upd[current_row][current_col] == 3:
+            set_d = d[i] + 1 if d[i] < 3 else 0
+            upd(cctv_lst[i][0], cctv_lst[i][1], d[i])
+            upd(cctv_lst[i][0], cctv_lst[i][1], set_d)
+        if matrix_upd[current_row][current_col] == 4:
+            tmp = {0, 1, 2, 3}
+            tmp.remove(d[i])
+            set_d = list(tmp)
+            upd(cctv_lst[i][0], cctv_lst[i][1], set_d[0])
+            upd(cctv_lst[i][0], cctv_lst[i][1], set_d[1])
+            upd(cctv_lst[i][0], cctv_lst[i][1], set_d[2])
+        if matrix_upd[current_row][current_col] == 5:
+            upd(cctv_lst[i][0], cctv_lst[i][1], 0)
+            upd(cctv_lst[i][0], cctv_lst[i][1], 1)
+            upd(cctv_lst[i][0], cctv_lst[i][1], 2)
+            upd(cctv_lst[i][0], cctv_lst[i][1], 3)
+
+    # 빈 칸 수 세기
+    count = 0
+    for row in matrix_upd:
+        for col in row:
+            count += 1 if col == 0 else 0
+    result = min(count, result)
+
+    matrix_upd = [list(row) for row in matrix_org]
+
+print(result)
