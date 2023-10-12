@@ -1,19 +1,18 @@
 import sys
 
-t = int(sys.stdin.readline())
-
+input = sys.stdin.readline
+t = int(input())
 for _ in range(t):
-    str = sys.stdin.readline().strip()
+    st = input().rstrip()
     stack = []
     flag = True
-    for v in str:
-        if v == '(':
-            stack.append('(')
-        else:
+    for el in st:
+        if el == '(':
+            stack.append(el)
+        elif el == ')':
             if stack:
                 stack.pop()
-            else:
-                flag = False
-                break
-    print('YES' if not stack and flag else 'NO')
-                
+                continue
+            flag = False
+            break
+    print('YES' if flag and not stack else 'NO')
