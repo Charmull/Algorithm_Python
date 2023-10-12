@@ -3,57 +3,56 @@ from collections import deque
 
 input = sys.stdin.readline
 m, n, h = map(int, input().split())
-graph = []
+matrix = []
 dist = []
-for i in range(h):
-    temp_g = []
-    temp_d = []
-    for j in range(n):
-        temp_g.append(list(map(int, input().split())))
-        temp_d.append([-2] * m)
-    graph.append(temp_g)
-    dist.append(temp_d)
-    
-start_points = []
-for i in range(h):
-    for j in range(n):
-        for k in range(m):
-            if graph[i][j][k] == 1:
-                start_points.append([i, j, k])
-                
+for _ in range(h):
+    tmp = []
+    tmp2 = []
+    for _ in range(n):
+        tmp.append(list(map(int, input().split())))
+        tmp2.append([0] * m)
+    matrix.append(tmp)
+    dist.append(tmp2)
+tomatos = []
+count = 0
+
 di = (1, -1, 0, 0, 0, 0)
-dj = (0, 0, 1, 0, 0, -1)
-dk = (0, 0, 0, 1, -1, 0)
-def bfs(start_points):
-    deq = deque(start_points)
-    for i, j, k in start_points:
-        dist[i][j][k] = 0
-    day = 0
+dj = (0, 0, 1, -1, 0, 0)
+dk = (0, 0, 0, 0, -1, 1)
+def bfs(start_idxs):
+    deq = deque(start_idxs)
+    max_day = 0
+    
+    for i, j, k in start_idxs:
+        dist[i][j][k] = 1
     
     while deq:
         i, j, k = deq.popleft()
         current_day = dist[i][j][k]
-        day = max(day, current_day)
-        for num in range(6):
-            ni = i + di[num]
-            nj = j + dj[num]
-            nk = k + dk[num]
+        max_day = max(max_day, current_day)
+        for order in range(6):
+            ni = i + di[order]
+            nj = j + dj[order]
+            nk = k + dk[order]
             if ni < 0 or nj < 0 or nk < 0 or ni >= h or nj >= n or nk >= m:
                 continue
-            if graph[ni][nj][nk] == -1:
-                dist[ni][nj][nk] = -1
-                continue
-            if graph[ni][nj][nk] != 0 or dist[ni][nj][nk] != -2:
+            if matrix[ni][nj][nk] or dist[ni][nj][nk]:
                 continue
             deq.append([ni, nj, nk])
             dist[ni][nj][nk] = current_day + 1
-    return day
-
-result = bfs(start_points)
+    return max_day - 1
+            
 for i in range(h):
     for j in range(n):
         for k in range(m):
-            if dist[i][j][k] == -2 and graph[i][j][k] == 0:
+            if matrix[i][j][k] == 1:
+                tomatos.append([i, j, k])
+
+count = bfs(tomatos)
+for i in range(h):
+    for j in range(n):
+        for k in range(m):
+            if not matrix[i][j][k] and not dist[i][j][k]:
                 print(-1)
                 sys.exit(0)
-print(result)
+print(count)
