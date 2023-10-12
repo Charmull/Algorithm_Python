@@ -4,19 +4,21 @@ from collections import deque
 input = sys.stdin.readline
 n, k = map(int, input().split())
 dist = [-1] * 100001
+
 deq = deque([n])
+
 dist[n] = 0
 
 while deq:
-    current_point = deq.popleft()
-    current_time = dist[current_point]
-    if current_point == k:
-        print(current_time)
-        sys.exit(0)
-    for v in [current_point - 1, current_point + 1, current_point * 2]:
-        if v < 0 or v > 100000:
+    x = deq.popleft()
+    current_mm = dist[x]
+    if x == k:
+        print(current_mm)
+        break
+    for nx in [x - 1, x + 1, 2 * x]:
+        if nx < 0 or nx > 100000:
             continue
-        if dist[v] != -1:
+        if dist[nx] != -1:
             continue
-        deq.append(v)
-        dist[v] = current_time + 1
+        deq.append(nx)
+        dist[nx] = current_mm + 1
