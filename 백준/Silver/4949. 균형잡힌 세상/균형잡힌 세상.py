@@ -1,23 +1,24 @@
-# 풀이 1
 import sys
 
+input = sys.stdin.readline
+
 while True:
-    str = sys.stdin.readline().rstrip()
-    if str == '.':
+    st = input().rstrip()
+    if st == '.':
         break
+        
     stack = []
     flag = True
-    for v in str:
-        if v == '(' or v == '[':
-            stack.append(v)
-        elif v == ')':
+    for el in st:
+        if el in ('(', '['):
+            stack.append(el)
+            continue
+        elif el == ')':
             if not stack or stack.pop() != '(':
                 flag = False
                 break
-        elif v == ']':
+        elif el == ']':
             if not stack or stack.pop() != '[':
                 flag = False
                 break
-        elif v == '.':
-            continue
     print('yes' if not stack and flag else 'no')
