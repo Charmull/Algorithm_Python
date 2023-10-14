@@ -1,27 +1,30 @@
-n = int(input())
-log = []
+import sys
+
+n = int(sys.stdin.readline())
+q_positions = []
 result = [0]
 
-def is_valid(nx, ny):
-    for x, y in log:
-        if nx == x or ny == y:
+def is_valid(r, c):
+    for row, col in q_positions:
+        if r == row or c == col:
             return False
-        if nx - ny == x - y:
+        elif r - c == row - col:
             return False
-        if nx + ny == x + y:
+        elif r + c == row + col:
             return False
     return True
 
-def dfs(row):
-    if len(log) == n:
+def dfs(k):
+    if len(q_positions) == n:
         result[0] += 1
         return
     
-    for col in range(n):
-        if is_valid(row, col):
-            log.append((row, col))
-            dfs(row + 1)
-            log.pop()
+    for i in range(n):
+        if not is_valid(k, i):
+            continue
+        q_positions.append((k, i))
+        dfs(k + 1)
+        q_positions.pop()
         
 dfs(0)
 print(result[0])
