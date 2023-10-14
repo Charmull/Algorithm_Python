@@ -2,22 +2,19 @@ import sys
 
 input = sys.stdin.readline
 n, m = map(int, input().split())
-nums = list(map(int, input().split()))
+nums = set(map(int, input().split()))
+nums = list(nums)
 nums.sort()
-l = []
+log = []
 
 def dfs():
-    if len(l) == m:
-        print(' '.join(map(str, l)))
+    if len(log) == m:
+        print(' '.join(map(str, log)))
         return
     
-    prev = 0
-    for i in range(n):
-        if prev == nums[i]:
-            continue
-        l.append(nums[i])
-        prev = nums[i]
+    for num in nums:
+        log.append(num)
         dfs()
-        l.pop()
+        log.pop()
         
 dfs()
