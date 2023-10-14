@@ -3,28 +3,31 @@ import sys
 input = sys.stdin.readline
 n = int(input())
 matrix = [list(map(int, input().split())) for _ in range(n)]
-count_minus = 0
-count_zero = 0
-count_plus = 0
+count = [0, 0, 0]
 
-def count_paper(row, col, n):
-    global count_minus, count_zero, count_plus
-
+def find_num(k, row, col):
     prev = matrix[row][col]
-    for y in range(row, row + n):
-        for x in range(col, col + n):
-            if prev != matrix[y][x]:
-                for i in range(3):
-                    for j in range(3):
-                        count_paper(row + i * n // 3, col + j * n // 3, n // 3)
-                return
-            
-    if prev == -1:
-        count_minus += 1
-    elif prev == 0:
-        count_zero += 1
+    flag = False
+    for i in range(k):
+        for j in range(k):
+            if prev != matrix[row + i][col + j]:
+                flag = True
+                break
+        if flag:
+            break
+    
+    if flag:
+        point = k // 3
+        for i in (0, point, point * 2):
+            for j in (0, point, point * 2):
+                find_num(point, row + i, col + j)
     else:
-        count_plus += 1
-
-count_paper(0, 0, n)
-print(count_minus, count_zero, count_plus, sep="\n")
+        if prev == -1:
+            count[0] += 1
+        elif prev == 0:
+            count[1] += 1
+        elif prev == 1:
+            count[2] += 1
+            
+find_num(n, 0, 0)
+print('\n'.join(map(str, count)))
