@@ -1,15 +1,14 @@
 n = int(input())
-
-result = [0]
 log = []
+result = [0]
 
 def is_valid(nx, ny):
     for x, y in log:
-        if x == nx or y == ny:
+        if nx == x or ny == y:
             return False
-        if x - y == nx - ny:
+        if nx - ny == x - y:
             return False
-        if x + y == nx + ny:
+        if nx + ny == x + y:
             return False
     return True
 
@@ -23,6 +22,6 @@ def dfs(row):
             log.append((row, col))
             dfs(row + 1)
             log.pop()
-
+        
 dfs(0)
 print(result[0])
