@@ -4,15 +4,15 @@ input = sys.stdin.readline
 n, m = map(int, input().split())
 nums = list(map(int, input().split()))
 nums.sort()
-l = []
+log = []
 
 def dfs(k):
-    if len(l) == m:
-        print(' '.join(map(str, l)))
-        return
-    
+    if len(log) == m:
+        print(' '.join(map(str, log)))
+        
     for i in range(k, n):
-        l.append(nums[i])
+        log.append(nums[i])
         dfs(i + 1)
-        l.pop()
+        log.pop()
+        
 dfs(0)
