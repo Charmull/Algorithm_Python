@@ -2,19 +2,18 @@ import sys
 
 input = sys.stdin.readline
 n, m = map(int, input().split())
+log = []
 
-s = []
-
-def func():
-    if len(s) == m:
-        print(' '.join(map(str, s)))
-        return 0
+def make_seq(log):
+    if len(log) == m:
+        print(' '.join(map(str, log)))
+        return
     
     for i in range(1, n + 1):
-        if i in s:
+        if i in log:
             continue
-        s.append(i)
-        func()
-        s.pop()
-
-func()
+        log.append(i)
+        make_seq(log)
+        log.pop()
+        
+make_seq(log)
