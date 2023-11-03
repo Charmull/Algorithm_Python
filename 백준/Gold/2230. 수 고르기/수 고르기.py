@@ -17,12 +17,15 @@ def lower_idx(target, j):
     return l
     
 mn = 2000000001
-# m + nums[i]보다 크거나 같은 수를 nums에서 이분탐색
-# 정렬이 깨지지 않는 타겟(m + nums[i])을 넣을 수 있는 위치이면서 가장 왼쪽
-for i in range(n):
-    idx = lower_idx(m + nums[i], i)
-    if idx >= n:
-        continue
-    mn = min(mn, nums[idx] - nums[i])
+
+en = 0
+for st in range(n):
+    while en <= n - 1:
+        if nums[en] - nums[st] >= m:
+            mn = min(mn, nums[en] - nums[st])
+            break
+        en += 1
+    if en == n:
+        break
     
 print(mn)
