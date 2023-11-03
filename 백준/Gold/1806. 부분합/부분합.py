@@ -6,17 +6,22 @@ nums = list(map(int, input().split()))
 
 count = 100001
 en = 0
-cur_sum = nums[0]
+cur_sum = 0
 for st in range(n):
-    while en <= n - 1 and cur_sum < s:
-        en += 1
-        if en != n:
+    while en <= n - 1:
+        if cur_sum < s:
             cur_sum += nums[en]
+            en += 1
+        else:
+            count = min(count, en - st)
+            break
 
     if en == n:
-        break
-    
-    count = min(count, en - st + 1)
+        if cur_sum < s:
+            break
+        else:
+            count = min(count, en - st)
+        
     cur_sum -= nums[st]
 
 print(count if count != 100001 else 0)
