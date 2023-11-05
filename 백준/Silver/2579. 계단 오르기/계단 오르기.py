@@ -6,17 +6,15 @@ stair = [0]
 for _ in range(n):
     stair.append(int(input()))
 
-if n == 1:
-    print(stair[1])
+if n <= 2:
+    print(sum(stair))
     sys.exit(0)
-    
-d = [[0] * 3 for _ in range(n + 1)]
-d[1][1] = stair[1]
-d[1][2] = 0
-d[2][1] = stair[2]
-d[2][2] = stair[1] + stair[2]
-for i in range(3, n + 1):
-    d[i][1] = max(d[i - 2][1], d[i - 2][2]) + stair[i]
-    d[i][2] = d[i - 1][1] + stair[i]
-    
-print(max(d[n][1], d[n][2]))
+
+d = [0] * (n + 1)
+d[1] = stair[1]
+d[2] = stair[1] + stair[2]
+d[3] = max(stair[2] + stair[3], stair[1] + stair[3])
+for i in range(4, n + 1):
+    d[i] = max(d[i - 3] + stair[i - 1] + stair[i], d[i - 2] + stair[i])
+
+print(d[n])
