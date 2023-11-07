@@ -11,7 +11,7 @@ def solve(x):
         cur += arr[i] // x
     return cur >= n
 
-st = 1
+st = 0
 en = 2 ** 31 - 1
 while st < en:
     mid = (st + en + 1) // 2
