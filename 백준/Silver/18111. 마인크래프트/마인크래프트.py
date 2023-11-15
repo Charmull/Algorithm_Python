@@ -17,7 +17,7 @@ for i in range(257):
             else:
                 use_num += i - matrix[j][k]
     if use_num > get_num + b:
-        continue
+        break
     time = use_num + get_num * 2
     if result_time >= time:
         result_time = time
