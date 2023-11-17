@@ -5,14 +5,18 @@ T = 10
 for test_case in range(1, T + 1):
     t = int(input())
     nums = deque(map(int, input().split()))
-    flag = True
-    while flag:
+    div = min(nums) // 15
+    for i in range(8):
+        nums[i] -= 15 * (div - 1)
+        
+    find_result = False
+    while not find_result:
         for i in range(1, 6):
-            el = nums.popleft() - i
-            if el <= 0:
+            cur = nums.popleft() - i
+            if cur <= 0:
                 nums.append(0)
-                flag = False
+                find_result = True
                 break
-            nums.append(el)
+            nums.append(cur)
                 
     print(f'#{test_case}', ' '.join(map(str, list(nums))))
