@@ -1,5 +1,7 @@
+import sys
 import heapq
 
+input = sys.stdin.readline
 n, k = map(int, input().split())
 jewel_data = [tuple(map(int, input().split())) for _ in range(n)]
 bag_data = [int(input()) for _ in range(k)]
