@@ -31,18 +31,15 @@ for i in range(1, n + 1):
         print(graph[i][j], end=' ')
     print()
 
-def get_root(a, b, cnt):
-    root.append(nxt[a][b])
-    cnt += 1
-    if nxt[a][b] != b:
-        cnt = get_root(nxt[a][b], b, cnt)
-    return cnt
-
 for i in range(1, n + 1):
     for j in range(1, n + 1):
         if nxt[i][j]:
-            root = [i]
-            cnt = get_root(i, j, 0) + 1
-            print(cnt, ' '.join(map(str, root)))
+            path = []
+            st = i
+            while st != j:
+                path.append(st)
+                st = nxt[st][j]
+            path.append(j)
+            print(len(path), ' '.join(map(str, path)))
         else:
             print(0)
