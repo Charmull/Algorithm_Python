@@ -4,20 +4,12 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 graph = [list(map(int, input().split())) for _ in range(N)]
-board = [[int(1e9)] * N for _ in range(N)]
-for i in range(N):
-    for j in range(N):
-        # if i == j or graph[i][j]:
-        if graph[i][j]:
-            board[i][j] = 1
         
 for k in range(N):
     for i in range(N):
         for j in range(N):
-            if board[i][j] > board[i][k] + board[k][j]:
-                board[i][j] = board[i][k] + board[k][j]
+            if graph[i][k] and graph[k][j]:
+                graph[i][j] = 1
                 
-for i in range(N):
-    for j in range(N):
-        print(1 if board[i][j] != int(1e9) else 0, end=" ")
-    print()
+for row in graph:
+    print(' '.join(map(str, row)))
