@@ -3,15 +3,25 @@ import sys
 input = sys.stdin.readline
 n, r, c = map(int, input().split())
 
-def func(n, r, c):
-    if n == 0: return 0
-    half = 1 << (n - 1)
-    if r < half and c < half:
-        return func(n - 1, r, c)
-    if r < half and c >= half:
-        return half * half + func(n - 1, r, c - half)
-    if r >= half and c < half:
-        return 2 * half * half + func(n - 1, r - half, c)
-    return 3 * half * half + func(n - 1, r - half, c - half)
+def find_num(k, r, c):
+    if k == 1:
+        if r == 0 and c == 0:
+            return 0
+        elif r == 0 and c == 1:
+            return 1
+        elif r == 1 and c == 0:
+            return 2
+        elif r == 1 and c == 1:
+            return 3
+    
+    half_line = 2 ** k // 2
+    if r < half_line and c < half_line:
+        return find_num(k - 1, r, c)
+    elif r < half_line and c >= half_line:
+        return half_line ** 2 + find_num(k - 1, r, c - half_line)
+    elif r >= half_line and c < half_line:
+        return half_line ** 2 * 2 + find_num(k - 1, r - half_line, c)
+    elif r >= half_line and c >= half_line:
+        return half_line ** 2 * 3 + find_num(k - 1, r - half_line, c - half_line)
 
-print(func(n, r, c))
+print(find_num(n, r, c))
