@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 33212 KB, 시간: 48 ms
+메모리: 31120 KB, 시간: 44 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 1월 31일 00:38:11
+2024년 1월 31일 13:01:16
 
 ### 문제 설명
 
@@ -20,7 +20,7 @@
 
 <p>오늘은 집 수리를 위해서 파이프 하나를 옮기려고 한다. 파이프는 아래와 같은 형태이고, 2개의 연속된 칸을 차지하는 크기이다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 138px; height: 70px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/3ceac594-87df-487d-9152-c532f7136e1e/-/preview/" style="width: 138px; height: 70px;"></p>
 
 <p>파이프는 회전시킬 수 있으며, 아래와 같이 3가지 방향이 가능하다.</p>
 
@@ -42,7 +42,7 @@
 
 <p style="text-align: center;">세로</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 886px; height: 203px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/ace5e982-6a52-4982-b51d-6c33c6b742bf/-/preview/" style="width: 886px; height: 203px;"></p>
 
 <p style="text-align: center;">대각선</p>
 
