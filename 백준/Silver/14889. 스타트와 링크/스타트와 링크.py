@@ -31,14 +31,13 @@ def cal(team, n):
             b += table[target2][target1]
     return abs(a - b)
 
+
 def make_team(idx, team, n, cnt):
     if cnt == n // 2:
         result[0] = min(result[0], cal(team, n))
         if result[0] == 0:
             print(0)
             sys.exit(0)
-        return
-    if cnt > n // 2:
         return
 
     for i in range(idx, n):
