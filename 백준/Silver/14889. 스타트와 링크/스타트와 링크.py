@@ -1,55 +1,52 @@
-# 1. 모든 가능한 팀 조합 (dfs) 184,756
-# 2. 팀 조합에 따른 능력 계산
+# 1. 팀 나누기
+# 2. 팀 점수 계산하기
 import sys
 
 input = sys.stdin.readline
 n = int(input())
-ability = [list(map(int, input().split())) for _ in range(n)]
+table = [list(map(int, input().split())) for _ in range(n)]
 result = [int(1e9)]
 
-def calc_ability(team, n):
-    a_team = []
-    b_team = []
-    a_abl = 0
-    b_abl = 0
+team = [0] * n
+def cal(team, n):
+    team_a = []
+    team_b = []
+    a = 0
+    b = 0
     for i in range(n):
-        if i in team:
-            a_team.append(i)
+        if team[i]:
+            team_a.append(i)
         else:
-            b_team.append(i)
-
+            team_b.append(i)
     for i in range(n // 2):
-        for j in range(n // 2):
-            t1 = a_team[i]
-            t2 = a_team[j]
-            a_abl += ability[t1][t2]
+        for j in range(i + 1, n // 2):
+            target1 = team_a[i]
+            target2 = team_a[j]
+            a += table[target1][target2]
+            a += table[target2][target1]
 
-            t1 = b_team[i]
-            t2 = b_team[j]
-            b_abl += ability[t1][t2]
-    return abs(a_abl - b_abl)
+            target1 = team_b[i]
+            target2 = team_b[j]
+            b += table[target1][target2]
+            b += table[target2][target1]
+    return abs(a - b)
 
-
-visited = [0] * n
-def dfs(team, idx, n):
-    if len(team) == n // 2:
-        tmp = calc_ability(team, n)
-        result[0] = min(result[0], tmp)
+def make_team(idx, team, n, cnt):
+    if cnt == n // 2:
+        result[0] = min(result[0], cal(team, n))
         if result[0] == 0:
             print(0)
             sys.exit(0)
         return
-    if idx == n:
+    if cnt > n // 2:
         return
 
     for i in range(idx, n):
-        if visited[i]:
+        if team[i]:
             continue
-        visited[i] = 1
-        team.add(i)
-        dfs(team, i + 1, n)
-        visited[i] = 0
-        team.remove(i)
+        team[i] = 1
+        make_team(i + 1, team, n, cnt + 1)
+        team[i] = 0
 
-dfs(set(), 0, n)
+make_team(0, team, n, 0)
 print(result[0])
