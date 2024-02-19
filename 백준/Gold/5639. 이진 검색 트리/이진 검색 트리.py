@@ -1,50 +1,38 @@
-# 1. 이진검색트리 구성하기 -> 딕셔너리
-# 1.1. 전위순회로 들어옴
-# 2. 후위순회 출력
-# 2.1. DFS
 import sys
-from collections import defaultdict
-sys.setrecursionlimit(int(1e5))
+input = sys.stdin.readline
+#recursion error 방지
+sys.setrecursionlimit(10**9)
 
-input = sys.stdin.readlines
-tree = defaultdict(list)
-nodes = input()
-root = int(nodes[0])
-tree[root] = [0, 0]
-for i in range(1, len(nodes)):
-    node = int(nodes[i])
-    parent = root
-    while True:
-        if parent > node:
-            if tree[parent]:
-                if tree[parent][0]:
-                    parent = tree[parent][0]
-                    continue
-                else:
-                    tree[parent][0] = node
-                    break
-            else:
-                tree[parent] = [node, 0]
-                break
-        elif parent < node:
-            if tree[parent]:
-                if tree[parent][1]:
-                    parent = tree[parent][1]
-                    continue
-                else:
-                    tree[parent][1] = node
-                    break
-            else:
-                tree[parent] = [0, node]
-                break
+arr = []
+while True:
+    try:
+        x = int(input())
+        arr.append(x)
+    except:
+        break
 
-def dfs(cur):
-    if tree[cur]:
-        if tree[cur][0]:
-            dfs(tree[cur][0])
-        if tree[cur][1]:
-            dfs(tree[cur][1])
-    if cur:
-        print(cur)
 
-dfs(root)
+def solution(A):
+    # 받은 배열 길이가 0이면 return
+    if len(A) == 0:
+        return
+
+    tempL, tempR = [], []
+    # 첫번째 값을 루트 노드로 설정
+    mid = A[0]
+    # 나머지 배열에 대해 for문을 돌면서 루트보다 커지는 부분을 기록해서 L과 R로 나눈다.
+    for i in range(1, len(A)):
+        if A[i] > mid:
+            tempL = A[1:i]
+            tempR = A[i:]
+            break
+    else:
+    	#모두 mid보다 작은 경우
+        tempL = A[1:]
+    
+    #왼쪽, 오른쪽 순으로 재귀 후 루트 노드 값 출력
+    solution(tempL)
+    solution(tempR)
+    print(mid)
+
+solution(arr)
