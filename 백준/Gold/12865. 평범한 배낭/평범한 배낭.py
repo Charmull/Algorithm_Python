@@ -7,10 +7,6 @@ input = sys.stdin.readline
 N, K = map(int, input().split())
 obj = [[0, 0]] + [list(map(int, input().split())) for _ in range(N)]
 dp = [[0] * (K + 1) for _ in range(N + 1)]
-for i in range(K + 1):
-    dp[0][i] = 0
-for i in range(N + 1):
-    dp[i][0] = 0
 
 for i in range(1, N + 1):
     for w in range(1, K + 1):
