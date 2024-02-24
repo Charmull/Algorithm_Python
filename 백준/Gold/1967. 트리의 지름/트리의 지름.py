@@ -1,6 +1,5 @@
 import sys
 from collections import defaultdict
-sys.setrecursionlimit(10**9)
 
 input = sys.stdin.readline
 n = int(input())
@@ -11,11 +10,14 @@ for _ in range(n - 1):
     graph[b].append((a, c))
 
 def dfs(node, cost):
-    for nxt, nxt_cost in graph[node]:
-        if visited[nxt] != -1:
-            continue
-        visited[nxt] = cost + nxt_cost
-        dfs(nxt, cost + nxt_cost)
+    stack = [(node, cost)]
+    while stack:
+        cur, cur_cost = stack.pop()
+        for nxt, nxt_cost in graph[cur]:
+            if visited[nxt] != -1:
+                continue
+            visited[nxt] = cur_cost + nxt_cost
+            stack.append((nxt, cur_cost + nxt_cost))
 
 visited = [-1] * (n + 1)
 visited[1] = 0
