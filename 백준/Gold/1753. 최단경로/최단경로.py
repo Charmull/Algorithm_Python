@@ -1,27 +1,35 @@
+# 1. 다익스트라
 import sys
+from collections import defaultdict
 import heapq
 
 input = sys.stdin.readline
-V, e = map(int, input().split())
+v, e = map(int, input().split())
 k = int(input())
-graph = [[] for _ in range(V + 1)]
+graph = defaultdict(list)
 for _ in range(e):
-    u, v, w = map(int, input().split())
-    graph[u].append([w, v])
+    a, b, c = map(int, input().split())
+    graph[a].append((b, c))
 
-dist = [int(1e9)] * (V + 1)
-dist[k] = 0
-h = [[0, k]]
+def dijkstra(start, v):
+    dist = [float('inf')] * (v + 1)
+    dist[start] = 0
+    h = [(0, start)]
+    while h:
+        c, cur = heapq.heappop(h)
+        if dist[cur] != c:
+            continue
+        for nxt, nxt_c in graph[cur]:
+            nxt_tc = c + nxt_c
+            if dist[nxt] <= nxt_tc:
+                continue
+            dist[nxt] = nxt_tc
+            heapq.heappush(h, (nxt_tc, nxt))
+    return dist
 
-while h:
-    cur_c, cur_v = heapq.heappop(h)
-    if cur_c > dist[cur_v]:
+dist = dijkstra(k, v)
+for i in range(1, v + 1):
+    if i == k:
+        print(0)
         continue
-
-    for nxt_c, nxt_v in graph[cur_v]:
-        if cur_c + nxt_c < dist[nxt_v]:
-            dist[nxt_v] = cur_c + nxt_c
-            heapq.heappush(h, [cur_c + nxt_c, nxt_v])
-
-for i in range(1, V + 1):
-    print(dist[i] if dist[i] != int(1e9) else 'INF')
+    print(dist[i] if dist[i] != float('inf') else 'INF')
