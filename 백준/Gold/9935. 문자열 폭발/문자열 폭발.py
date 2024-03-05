@@ -2,15 +2,14 @@
 import sys
 
 input = sys.stdin.readline
-st = list(input().strip())
-st_len = len(st)
-bumb = list(input().strip())
-bumb_len = len(bumb)
+st = input().strip()
+bomb = list(input().strip())
+bomb_len = len(bomb)
 stack = []
-for i in range(st_len):
-    stack.append(st[i])
-    if len(stack) >= bumb_len and stack[-bumb_len:] == bumb:
-        for _ in range(bumb_len):
+for s in st:
+    stack.append(s)
+    if stack[-bomb_len:] == bomb:
+        for _ in range(bomb_len):
             stack.pop()
 
 print(''.join(stack) if stack else 'FRULA')
