@@ -1,5 +1,3 @@
-# 1. /나 \가 홀수번 들어온 시점은 도형 내부
-# 2. /나 \는 0.5, .는 1
 import sys
 
 input = sys.stdin.readline
@@ -7,13 +5,12 @@ h, w = map(int, input().split())
 board = [list(input().strip()) for _ in range(h)]
 result = 0
 for i in range(h):
-    flag = False  # /이나 \ 홀수번 들어왔나
+    line = 0 # /이나 \이 등장한 개수
     for j in range(w):
         el = board[i][j]
         if el == '/' or el == '\\':
-            result += 0.5
-            flag = not flag
-            continue
-        if flag and el == '.':
+            line += 1
+        if el == '.' and line % 2: # /이나 \이 홀수번 등장했고, 이번 값이 .이면 도형 내부의 .임
             result += 1
-print(int(result) if int(result) == result else result)
+    result += line // 2
+print(result)
