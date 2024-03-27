@@ -15,13 +15,15 @@ def main():
                 if i in nums_set:  # 나누는 수가 nums_set에 있으면
                     score[i] += 1
                     score[num] -= 1
-                target = num // i
-                if num != i ** 2 and target != num and target in nums_set:  # num // i가 nums_set에 있으면
-                    score[target] += 1
+                if num != i ** 2 and num // i != num and num // i in nums_set:  # num // i가 nums_set에 있으면
+                    score[num // i] += 1
                     score[num] -= 1
 
+    result = []
     for num in nums:
-        print(score[num], end=' ')
+        result.append(score[num])
+
+    print(' '.join(map(str, result)))
 
 if __name__ == '__main__':
     main()
