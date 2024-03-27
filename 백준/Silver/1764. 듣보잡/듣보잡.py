@@ -3,8 +3,14 @@ import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
 no_listen = set([input().strip() for _ in range(n)])
-no_see = set([input().strip() for _ in range(m)])
-result = list(no_listen.intersection(no_see))
+cnt = 0
+result = []
+for _ in range(m):
+    name = input().strip()
+    if name in no_listen:
+        result.append(name)
+        cnt += 1
+        
 result.sort()
-print(len(result))
+print(cnt)
 print('\n'.join(result))
