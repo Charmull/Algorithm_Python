@@ -1,24 +1,25 @@
 import sys
 from collections import deque
 
-x = int(sys.stdin.readline())
-dist = [0] * (x + 1)
+input = sys.stdin.readline
+n = int(input())
 
 def bfs(start):
     deq = deque([start])
-    dist[start] = 1
-
+    dist = [-1] * (1_000_001)
+    dist[start] = 0
+    
     while deq:
-        c = deq.popleft()
-        current_cnt = dist[c]
-        if c == x:
-            return current_cnt - 1
-        for nc in (c * 3, c * 2, c + 1):
-            if nc < 1 or nc > x:
+        x = deq.popleft()
+        cur_time = dist[x]
+        if x == n:
+            return cur_time
+        for nx in (x * 3, x * 2, x + 1):
+            if nx > 1_000_000:
                 continue
-            if dist[nc]:
+            if dist[nx] != -1:
                 continue
-            deq.append(nc)
-            dist[nc] = current_cnt + 1
-
+            dist[nx] = cur_time + 1
+            deq.append(nx)
+            
 print(bfs(1))
