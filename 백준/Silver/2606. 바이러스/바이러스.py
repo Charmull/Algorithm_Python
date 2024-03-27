@@ -2,23 +2,27 @@ import sys
 from collections import deque
 
 input = sys.stdin.readline
-V = int(input())
-E = int(input())
-graph = [[] for _ in range(V + 1)]
-for _ in range(E):
+n = int(input())
+m = int(input())
+graph = [[] for _ in range(n + 1)]
+for _ in range(m):
     a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
 
-visited = [0] * (V + 1)
-queue = deque([[0, 1]])
-while queue:
-    cur_v, target_v = queue.popleft()
-    if visited[target_v]:
-        continue
-    visited[target_v] = 1
-    for nxt_v in graph[target_v]:
-        queue.append([target_v, nxt_v])
+group = set([1])
+deq = deque([1])
+visited = [0] * (n + 1)
+visited[1] = 1
+while deq:
+    x = deq.popleft()
+    for nx in graph[x]:
+        if nx == x:
+            continue
+        if visited[nx]:
+            continue
+        group.add(nx)
+        visited[nx] = 1
+        deq.append(nx)
 
-result = visited.count(1)
-print(result - 1)
+print(len(list(group)) - 1)
