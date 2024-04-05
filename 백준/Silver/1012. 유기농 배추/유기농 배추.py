@@ -2,31 +2,15 @@ import sys
 from collections import deque
 
 input = sys.stdin.readline
-t = int(input())
+t = int(input().strip())
 
-def set_init(m, n, k):
-    graph = [[0] * m for _ in range(n)]
-    for _ in range(k):
-        cabbage_point = list(map(int, input().split()))
-        graph[cabbage_point[1]][cabbage_point[0]] = 1
-    visited = [[0] * m for _ in range(n)]
-    return graph, visited
-
-def find_start_point(m, n, graph, visited):
-    count = 0
-    for i in range(n):
-        for j in range(m):
-            if graph[i][j] == 1 and not visited[i][j]:
-                bfs(m, n, i, j, graph, visited)
-                count += 1
-    return count
-              
 dy = (-1, 0, 0, 1)
 dx = (0, -1, 1, 0)
-def bfs(m, n, start_row, start_col, graph, visited):
+def bfs(matrix, visited, start_row, start_col, n, m):
     deq = deque([[start_row, start_col]])
+    
     visited[start_row][start_col] = 1
-        
+    
     while deq:
         y, x = deq.popleft()
         for i in range(4):
@@ -34,12 +18,23 @@ def bfs(m, n, start_row, start_col, graph, visited):
             nx = x + dx[i]
             if ny < 0 or nx < 0 or ny >= n or nx >= m:
                 continue
-            if graph[ny][nx] != 1 or visited[ny][nx]:
+            if not matrix[ny][nx] or visited[ny][nx]:
                 continue
             deq.append([ny, nx])
             visited[ny][nx] = 1
-
+            
 for _ in range(t):
     m, n, k = map(int, input().split())
-    graph, visited = set_init(m, n, k)
-    print(find_start_point(m, n, graph, visited))
+    matrix = [[0] * m for _ in range(n)]
+    for _ in range(k):
+        x, y = map(int, input().split())
+        matrix[y][x] = 1
+    
+    visited = [[0] * m for _ in range(n)]
+    count = 0
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == 1 and not visited[i][j]:
+                bfs(matrix, visited, i, j, n, m)
+                count += 1
+    print(count)
