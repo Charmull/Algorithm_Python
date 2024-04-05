@@ -7,8 +7,9 @@ h = []
 for _ in range(n):
     num = int(input())
     if not num:
-        if not h:
-            print(0)
+        if h:
+            print(-heapq.heappop(h))
             continue
-        print(-heapq.heappop(h))
+        print(0)
+        continue
     heapq.heappush(h, -num)
